@@ -3,14 +3,22 @@ const cors = require('cors')
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 require('dotenv').config()
 const app=express()
-const port=process.env.PORT||5000;
+
 
 
 
 
 //middleware
-app.use(cors())
+app.use(cors(
+  {
+    origin:["https://incomparable-pudding-212c9c.netlify.app/"],
+    credentials:true
+  }
+))
 app.use(express.json())
+
+const port=process.env.PORT||5000;
+
 
 const uri = `mongodb+srv://${process.env.DB_EMPLOYEE}:${process.env.DB_PASS}@cluster0.hhrcfmv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
