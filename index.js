@@ -11,7 +11,7 @@ const app=express()
 //middleware
 app.use(cors(
   {
-    origin:["https://incomparable-pudding-212c9c.netlify.app/"],
+    origin:["https://incomparable-pudding-212c9c.netlify.app"],
     credentials:true
   }
 ))
